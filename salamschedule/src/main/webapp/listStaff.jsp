@@ -109,7 +109,7 @@
 			var r = confirm("Are you sure you want to delete?");
 			if (r == true) {
 				location.href = 'DeleteStaffController?id=' + id;
-				alert("Customer Request successfully deleted");
+				alert("Staff successfully deleted");
 			} else {
 				return false;
 			}

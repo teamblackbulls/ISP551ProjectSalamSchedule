@@ -2,18 +2,23 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Sign In</title>
+	<title>Insert title here</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/style.css">  
-  	<style>
+	<link rel="stylesheet" type="text/css" href="assets/style.css"> 
+	
+	<style>
+  		h3{
+			color:red;
+		}
   		.login-box{
-    		height: 380px;
+    		height: 400px;
 		}
 	</style>
+	
 </head>
 <body>
 	<header>
@@ -25,16 +30,15 @@
 		</nav>
 	</header>
 	<br>
-	
-	<form method="post" action="loginAdminCheck.jsp">
+	<form method="post" action="LoginStaffController">
 		<div class="login-box">
 			<img src="assets/user.png" class="avatar">
-			<h1>Admin Login</h1>
-				<p>Username</p>
-				<input type="text" name="username" placeholder="Enter Username" required>
+			<h3><center>Incorrect Staff ID or Password</center></h3>
+				<p>Staff ID</p>
+				<input type="text" id="sid" name="sid" required="required" placeholder="s00129">
 				
 				<p>Password</p>
-				<input type="password" name="password" placeholder="**********" required>
+				<input type="password" id="pass" name="pass" required="required" placeholder="******">
 				
 				<input type="submit" name="submit" value="login">
 	</form>

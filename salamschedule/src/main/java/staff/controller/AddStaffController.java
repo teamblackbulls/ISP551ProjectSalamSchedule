@@ -36,12 +36,14 @@ public class AddStaffController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Staff s = new Staff();		
+		Staff s = new Staff();	
+		s.setSid(request.getParameter("sid"));
 		s.setName(request.getParameter("name"));
 		s.setAddress(request.getParameter("address"));
 		s.setPhone(request.getParameter("phone"));
 		s.setEmail(request.getParameter("email"));
 		s.setRole(request.getParameter("role"));
+		s.setPass(request.getParameter("pass"));
 		
 		
 		dao.addStaff(s); //invoke method addStaff() in StaffDAO

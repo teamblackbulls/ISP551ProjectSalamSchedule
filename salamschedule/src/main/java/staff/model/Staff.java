@@ -2,11 +2,13 @@ package staff.model;
 
 public class Staff {
 	private int id;
+	private String sid;
 	private String name;
 	private String address;
 	private String phone;
 	private String email;
 	private String role;
+	private String pass;
 	
 	public Staff() {
 		
@@ -21,6 +23,18 @@ public class Staff {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getSid() {
+		return sid;
+	}
+
+
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+
 
 	public String getName() {
 		return name;
@@ -60,6 +74,14 @@ public class Staff {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	
 	

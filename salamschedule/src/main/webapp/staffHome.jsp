@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>My Profile</title>
+	<title>Insert title here</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,12 +39,22 @@
 		.active {
 		   color: black;
 		}
-	
+		
+		table, th, td {
+		  border: 1px solid;
+		}
+		table {
+		  width: 95%;
+		}
+		
+		.center {
+		  margin: auto;
+
+		  padding: 10px;
+		}
 	</style>
-	
 </head>
 <body>
-<br>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: #95ac80">
@@ -53,22 +63,15 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a class="active" href="#viewStaff">View Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a class="active" href="#ListStaffController">Home</a></li>
+			  <li><a href="staffProfile.jsp">My Profile</a></li>
+			  <li><a href="index.html">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
-	<br>
-	<div class="center">
-		<h2>Staff Information</h2>
-		ID: <c:out value="${s.id}"/> <br>
-		Name: <c:out value="${s.name}"/> <br>
-		Address: <c:out value="${s.address}"/> <br>
-		Phone Number: <c:out value="${s.phone}"/> <br>
-		Email: <c:out value="${s.email}"/> <br>
-		Role: <c:out value="${s.role}"/> <br><br>
-	</div>
+	<h1>${message} !! Welcome</h1>
+
+	<a class="btn btn-primary" href="ViewStaffController?id=<c:out value="${staffs.id}"/>">View My Profile</a></td>
+			
 </body>
 </html>

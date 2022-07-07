@@ -16,28 +16,32 @@ public class StaffDAO {
 	static Statement st = null;
 	static ResultSet rs = null;
 	
-	private String name, address, phone, email, role;
+	private String sid, name, address, phone, email, role, pass;
 	private int id;
 	
 	//add Staff
 		public void addStaff(Staff bean) {
+			sid = bean.getSid();
 			name = bean.getName();
 			address = bean.getAddress();
 			phone = bean.getPhone();
 			email= bean.getEmail();
 			role = bean.getRole();
+			pass = bean.getPass();
 			
 			try {
 				//call getConnection() method
 				con = ConnectionManager.getConnection();
 				
 				//create statement
-				ps = con.prepareStatement("INSERT INTO staff(name, address, phone, email, role)VALUES(?,?,?,?,?)");
-				ps.setString(1,name);
-				ps.setString(2, address);
-				ps.setString(3,phone);
-				ps.setString(4,email);
-				ps.setString(5,role);
+				ps = con.prepareStatement("INSERT INTO staff(sid, name, address, phone, email, role, pass)VALUES(?,?,?,?,?,?,?)");
+				ps.setString(1,sid);
+				ps.setString(2,name);
+				ps.setString(3, address);
+				ps.setString(4,phone);
+				ps.setString(5,email);
+				ps.setString(6,role);
+				ps.setString(7,pass);
 
 				//execute query
 				ps.executeUpdate();
@@ -69,11 +73,13 @@ public class StaffDAO {
 				while(rs.next()) {		//process result
 					Staff s = new Staff();
 					s.setId(rs.getInt("id"));
+					s.setSid(rs.getString("sid"));
 					s.setName(rs.getString("name"));
 					s.setAddress(rs.getString("address"));
 					s.setPhone(rs.getString("phone"));
 					s.setEmail(rs.getString("email"));
 					s.setRole(rs.getString("role"));
+					s.setPass(rs.getString("pass"));
 				
 					staffs.add(s);
 				}
@@ -105,11 +111,13 @@ public class StaffDAO {
 				if(rs.next()) {
 					
 					s.setId(rs.getInt("id"));
+					s.setSid(rs.getString("sid"));
 					s.setName(rs.getString("name"));
 					s.setAddress(rs.getString("address"));
 					s.setPhone(rs.getString("phone"));
 					s.setEmail(rs.getString("email"));
 					s.setRole(rs.getString("role"));
+					s.setPass(rs.getString("pass"));
 				}
 				
 				//close connection
@@ -146,24 +154,28 @@ public class StaffDAO {
 		//update Staff
 		public void updateStaff(Staff bean) {
 			id = bean.getId();
+			sid = bean.getSid();
 			name = bean.getName();
 			address = bean.getAddress();
 			phone = bean.getPhone();
 			email= bean.getEmail();
 			role = bean.getRole();
+			pass = bean.getPass();
 			
 			try {
 				//call getConnection method
 				con = ConnectionManager.getConnection();
 				
 				//create statement
-				ps = con.prepareStatement("UPDATE staff SET name=?, address=?, phone=?, email=?,role=? WHERE id=?");
-				ps.setString(1,name);
-				ps.setString(2, address);
-				ps.setString(3,phone);
-				ps.setString(4,email);
-				ps.setString(5,role);
-				ps.setInt(6, id);
+				ps = con.prepareStatement("UPDATE staff SET sid=?, name=?, address=?, phone=?, email=?,role=?,pass=? WHERE id=?");
+				ps.setString(1,sid);
+				ps.setString(2,name);
+				ps.setString(3, address);
+				ps.setString(4,phone);
+				ps.setString(5,email);
+				ps.setString(6,role);
+				ps.setString(7,pass);
+				ps.setInt(8, id);
 				
 				//execute query
 				ps.executeUpdate();
@@ -177,6 +189,37 @@ public class StaffDAO {
 				e.printStackTrace();
 			}
 		}
+		
+		//get StaffLogin
+		public Staff getStaffLogin(String sid, String pass) {
+			Staff s = new Staff();
+			try {
+				//call getConnection method
+				con = ConnectionManager.getConnection();
+				
+				//create statement
+				ps= con.prepareStatement("SELECT * FROM staff WHERE sid=? and pass=?");
+				ps.setString(1, sid);
+				ps.setString(2, pass);
+				
+				//execute query
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					
+					s.setSid(rs.getString("sid"));
+					s.setPass(rs.getString("pass"));
+					s.setName(rs.getString("name"));
+				}
+				
+				//close connection
+				con.close();
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return s;
+		}				
 		
 	
 }

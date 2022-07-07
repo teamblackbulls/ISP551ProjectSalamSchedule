@@ -15,7 +15,7 @@
 	{
 		response.sendRedirect("listStaff.jsp");
 	} else {
-		response.sendRedirect("Error.html");
+		response.sendRedirect("errorLoginAdmin.html");
 	}
 	
 	%>

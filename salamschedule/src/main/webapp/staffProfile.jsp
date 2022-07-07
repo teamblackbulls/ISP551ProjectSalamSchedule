@@ -53,22 +53,22 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a class="active" href="#viewStaff">View Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a href="staffHome.jsp">Home</a></li>
+			  <li><a class="active" href="#myprofile">My Profile</a></li>
+			  <li><a href="index.html">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
 	<br>
 	<div class="center">
-		<h2>Staff Information</h2>
-		ID: <c:out value="${s.id}"/> <br>
+		<h2>My Profile Details</h2>
+		Staff ID: <c:out value="${s.sid}"/> <br>
 		Name: <c:out value="${s.name}"/> <br>
 		Address: <c:out value="${s.address}"/> <br>
 		Phone Number: <c:out value="${s.phone}"/> <br>
 		Email: <c:out value="${s.email}"/> <br>
 		Role: <c:out value="${s.role}"/> <br><br>
+		Password: <c:out value="${s.pass}"/> <br><br>
 	</div>
 </body>
 </html>

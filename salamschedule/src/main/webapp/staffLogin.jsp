@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +16,7 @@
     		height: 380px;
 		}
 	</style>
+	
 </head>
 <body>
 	<header>
@@ -26,15 +29,15 @@
 	</header>
 	<br>
 	
-	<form method="post" action="loginAdminCheck.jsp">
+	<form method="post" action="LoginStaffController">
 		<div class="login-box">
 			<img src="assets/user.png" class="avatar">
-			<h1>Admin Login</h1>
-				<p>Username</p>
-				<input type="text" name="username" placeholder="Enter Username" required>
+			<h1>Staff Login</h1>
+				<p>Staff ID</p>
+				<input type="text" id="sid" name="sid" required="required" placeholder="s00129">
 				
 				<p>Password</p>
-				<input type="password" name="password" placeholder="**********" required>
+				<input type="password" id="pass" name="pass" required="required" placeholder="******">
 				
 				<input type="submit" name="submit" value="login">
 	</form>

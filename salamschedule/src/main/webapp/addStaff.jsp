@@ -66,6 +66,10 @@
 						<h2> Add New Staff </h2>
 					</caption>
 					<fieldset class="form-group">
+						<label>Staff ID</label> 
+						<input type="text" class="form-control" id="sid" name="sid" required="required" placeholder="s00129">
+					</fieldset>
+					<fieldset class="form-group">
 						<label>Staff Name</label> 
 						<input type="text" class="form-control" id="name" name="name" required="required" placeholder="Ahmad Hakim*">
 					</fieldset>
@@ -91,6 +95,11 @@
 							<option value="Imam">Imam</option>
 							<option value="Bilal">Bilal</option>
 						</select>
+					</fieldset>
+					
+					<fieldset class="form-group">
+						<label>Staff Password</label> 
+						<input type="password" class="form-control" id="pass" name="pass" placeholder="******">
 					</fieldset>
 	
 					<button type="submit" class="btn btn-success">Submit</button>
