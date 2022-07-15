@@ -47,11 +47,13 @@ public class UpdateStaffController extends HttpServlet {
 		// TODO Auto-generated method stub
 		Staff s = new Staff();
 		s.setId(Integer.parseInt(request.getParameter("id")));
+		s.setSid(request.getParameter("sid"));
 		s.setName(request.getParameter("name"));
 		s.setAddress(request.getParameter("address"));
 		s.setPhone(request.getParameter("phone"));
 		s.setEmail(request.getParameter("email"));
 		s.setRole(request.getParameter("role"));
+		s.setPass(request.getParameter("pass"));
 		
 		
 		dao.updateStaff(s);

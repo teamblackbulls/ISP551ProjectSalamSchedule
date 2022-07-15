@@ -53,17 +53,20 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a class="active" href="#viewStaff">View Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a href="adminHome.jsp">Home</a></li>
+			  <li><a href="ListStaffController">Staff</a></li>
+			  <li><a href="ListPrayerController">Prayers</a></li>
+			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
 	<br>
+	<a href="ListStaffController"><button >Back</button></a><br><br>
+	
 	<div class="center">
 		<h2>Staff Information</h2>
-		ID: <c:out value="${s.id}"/> <br>
+		Staff ID: <c:out value="${s.sid}"/> <br>
+		Password(later buang): <c:out value="${s.pass}"/> <br><br>
 		Name: <c:out value="${s.name}"/> <br>
 		Address: <c:out value="${s.address}"/> <br>
 		Phone Number: <c:out value="${s.phone}"/> <br>

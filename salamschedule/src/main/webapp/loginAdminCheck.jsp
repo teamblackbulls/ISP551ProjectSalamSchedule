@@ -13,7 +13,7 @@
 	
 	if((username.equals("admin")&&password.equals("admin")))
 	{
-		response.sendRedirect("listStaff.jsp");
+		response.sendRedirect("adminHome.jsp");
 	} else {
 		response.sendRedirect("errorLoginAdmin.html");
 	}

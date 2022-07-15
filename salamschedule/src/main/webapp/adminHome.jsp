@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Add Prayer</title>
+	<title>Home</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -51,33 +51,16 @@
 			</div>
 
 			<ul>
-			  <li><a href="adminHome.jsp">Home</a></li>
-			  <li><a href="ListStaffController">Staff</a></li>
+			  <li><a href="#home">Home</a></li>
+			  <li><a href="ListStaffController">Staffs</a></li>
 			  <li><a href="ListPrayerController">Prayers</a></li>
+			  <li><a href="ListScheduleController">Schedules</a></li>
+			  <li><a href="ListPrayerController">Reschedule Requests</a></li>
 			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
 	<br>
-	
-	<div class="container col-md-5">
-	<a href="ListPrayerController"><button >Back</button></a><br><br>
-		<div class="card">
-			<div class="card-body">
-			<form method="post" action="AddPrayerController">
-					<caption>
-						<h2> Add Prayer </h2>
-					</caption>
-					<fieldset class="form-group">
-						<label>Prayer Name</label> 
-						<input type="text" class="form-control" id="pname" name="prayername" required="required" placeholder="Zuhur*">
-					</fieldset>
-					
-					<button type="submit" class="btn btn-success">Submit</button>
-					<button type="reset" class="btn btn-success">Reset</button>
-			</form>
-			</div>
-		</div>
-	</div>
+
 </body>
 </html>

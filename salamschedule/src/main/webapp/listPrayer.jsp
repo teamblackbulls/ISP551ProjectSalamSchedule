@@ -64,10 +64,10 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a href="addStaff.jsp">Add New Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a class="active" href="#ListPrayerController">List of Prayers</a></li>
+			  <li><a href="adminHome.jsp">Home</a></li>
+			  <li><a href="ListStaffController">Staff</a></li>
+			  <li><a class="active" href="#ListPrayerController">Prayers</a></li>
+			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
@@ -76,7 +76,10 @@
 	
 	
 	<div class="center">
+	
 		<a href="addPrayer.jsp"><button >Add Prayer</button></a>
+		
+		
 		<br><br>
 		<table>
 			<tr>

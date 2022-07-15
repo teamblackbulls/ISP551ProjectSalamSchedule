@@ -77,7 +77,7 @@ try {
 
 			<ul>
 			  <li><a href="#adminHome.jsp">Home</a></li>
-			  <li><a href="LoginStaffController">My Schedule</a></li>
+			  <li><a href="staffSchedule.jsp">My Schedule</a></li>
 			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
@@ -92,7 +92,6 @@ try {
 		Email: <%=rs.getString(6) %><br>
 		Role:<%=rs.getString(7) %><br><br>
 	</div>
-	<a class="btn btn-primary" href="UpdateStaffController">Update</a>
 </body>
  <%
 	}
@@ -105,8 +104,4 @@ try {
 
 
 
-	
-	
-	
-	
-
+	>

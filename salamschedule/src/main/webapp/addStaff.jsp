@@ -50,15 +50,20 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a class="active" href="#addStaff">Add New Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a href="adminHome.jsp">Home</a></li>
+			  <li><a href="ListStaffController">Staff</a></li>
+			  <li><a href="ListPrayerController">Prayers</a></li>
+			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
+	
 	<br>
+	
 	<div class="container col-md-5">
+	
+	<a href="ListStaffController"><button >Back</button></a><br><br>
+	
 		<div class="card">
 			<div class="card-body">
 			<form method="post" action="AddStaffController">

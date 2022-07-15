@@ -51,21 +51,25 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a class="active" href="#updateStaff">Update Staff</a></li>
-			  <li><a href="ListStaffController">List Staff</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a href="adminHome.jsp">Home</a></li>
+			  <li><a href="ListStaffController">Staff</a></li>
+			  <li><a href="ListPrayerController">Prayers</a></li>
+			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
 	<br>
 	<div class="container col-md-5">
+	
+	<a href="ListStaffController"><button >Back</button></a><br><br>
+	
 		<div class="card">
 			<div class="card-body">
 			<form method="post" action="UpdateStaffController">
 					<caption>
 						<h2> Update Staff </h2>
 					</caption>
+					
 					<fieldset class="form-group">
 						<label>Staff Name</label> 
 						<input type="text" class="form-control" id="name" name="name" required="required" placeholder="Ahmad Hakim*" value="${s.name}"/>
@@ -93,7 +97,11 @@
 							<option value="Bilal">Bilal</option>
 						</select>
 					</fieldset>
-					<input type="hidden" name="id" value="${s.id}"/><br><br>
+					
+					<input type="hidden" name="sid" value="${s.sid}"/>
+					<input type="hidden" name="pass" value="${s.pass}"/>
+					<input type="hidden" name="id" value="${s.id}"/>
+					
 					<button type="submit" class="btn btn-success">Submit</button>
 					<button type="reset" class="btn btn-success">Reset</button>
 			</form>

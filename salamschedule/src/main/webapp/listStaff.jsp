@@ -64,18 +64,22 @@
 			</div>
 
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a href="addStaff.jsp">Add New Staff</a></li>
-			  <li><a class="active" href="#ListStaffController">List of Staffs</a></li>
-			  <li><a href="ListPrayerController">List Prayer</a></li>
+			  <li><a href="adminHome.jsp">Home</a></li>
+			  <li><a class="active" href="#ListStaffController">Staff</a></li>
+			  <li><a href="ListPrayerController">Prayers</a></li>
+			  <li><a href="index.html">Log out</a>
 			</ul>
 		</nav>
 	</header>
 	
 	<div class="center">
+	
+		<a href="addStaff.jsp"><button >Add Staff</button></a>
+		
+		<br><br>
 		<table>
 			<tr>
-				<th>ID</th>
+				<th>Staff ID</th>
 				<th>Staff Name</th>
 				<th>Staff Address</th>
 				<th>Phone Number</th>
@@ -85,7 +89,7 @@
 			</tr>
 			<c:forEach  items="${staffs}" var="s" varStatus="staffs">
 			<tr>
-				<td><c:out value="${s.id}" /></td>
+				<td><c:out value="${s.sid}" /></td>
 				<td><c:out value="${s.name}" /></td>
 				<td><c:out value="${s.address}" /></td>
 				<td><c:out value="${s.phone}" /></td>
