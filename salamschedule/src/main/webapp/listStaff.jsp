@@ -89,7 +89,7 @@
 			</tr>
 			<c:forEach  items="${staffs}" var="s" varStatus="staffs">
 			<tr>
-				<td><c:out value="${s.sid}" /></td>
+				<td><c:out value="${s.staffid}" /></td>
 				<td><c:out value="${s.name}" /></td>
 				<td><c:out value="${s.address}" /></td>
 				<td><c:out value="${s.phone}" /></td>

@@ -92,13 +92,14 @@
 	
 					<fieldset class="form-group">
 						<label>Staff Role</label> 
-						<select class="form-control" name="role">
+						<select class="form-control" name="role" >
+							<option value="<c:out value="${s.role}"">${s.role}<c:out value="${s.role}"/></option>
 							<option value="Imam">Imam</option>
 							<option value="Bilal">Bilal</option>
 						</select>
 					</fieldset>
 					
-					<input type="hidden" name="sid" value="${s.sid}"/>
+					<input type="hidden" name="staffid" value="${s.staffid}"/>
 					<input type="hidden" name="pass" value="${s.pass}"/>
 					<input type="hidden" name="id" value="${s.id}"/>
 					

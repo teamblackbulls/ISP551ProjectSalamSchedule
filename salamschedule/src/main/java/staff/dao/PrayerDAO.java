@@ -128,30 +128,4 @@ public class PrayerDAO {
 				}
 			}
 			
-			//update Prayer
-			public void updatePrayer(Prayer bean) {
-				id = bean.getId();
-				prayername = bean.getPrayername();
-				
-				try {
-					//call getConnection method
-					con = ConnectionManager.getConnection();
-					
-					//create statement
-					ps = con.prepareStatement("UPDATE prayer SET prayername=? WHERE id=?");
-					ps.setString(1,prayername);
-					ps.setInt(2, id);
-					
-					//execute query
-					ps.executeUpdate();
-					
-					System.out.println("Successfully updated");
-					
-					//close connection
-					con.close();
-					
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-			}
 }

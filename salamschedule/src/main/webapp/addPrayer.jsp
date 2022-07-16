@@ -70,7 +70,7 @@
 					</caption>
 					<fieldset class="form-group">
 						<label>Prayer Name</label> 
-						<input type="text" class="form-control" id="pname" name="prayername" required="required" placeholder="Zuhur*">
+						<input type="text" class="form-control" id="prayername" name="prayername" required="required" placeholder="Zuhur*">
 					</fieldset>
 					
 					<button type="submit" class="btn btn-success">Submit</button>

@@ -34,7 +34,7 @@
 			<img src="assets/user.png" class="avatar">
 			<h1>Staff Login</h1>
 				<p>Staff ID</p>
-				<input type="text" id="sid" name="sid" required="required" placeholder="s00129">
+				<input type="text" id="staffid" name="staffid" required="required" placeholder="S00129">
 				
 				<p>Password</p>
 				<input type="password" id="pass" name="pass" required="required" placeholder="******">

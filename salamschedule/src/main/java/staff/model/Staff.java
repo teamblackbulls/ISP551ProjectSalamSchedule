@@ -2,7 +2,7 @@ package staff.model;
 
 public class Staff {
 	private int id;
-	private String sid;
+	private String staffid;
 	private String name;
 	private String address;
 	private String phone;
@@ -23,17 +23,14 @@ public class Staff {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getSid() {
-		return sid;
+
+	public String getStaffid() {
+		return staffid;
 	}
 
-
-
-	public void setSid(String sid) {
-		this.sid = sid;
+	public void setStaffid(String staffid) {
+		this.staffid = staffid;
 	}
-
 
 
 	public String getName() {

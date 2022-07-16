@@ -72,7 +72,7 @@
 					</caption>
 					<fieldset class="form-group">
 						<label>Staff ID</label> 
-						<input type="text" class="form-control" id="sid" name="sid" required="required" placeholder="s00129">
+						<input type="text" class="form-control" id="staffid" name="staffid" required="required" placeholder="S00129">
 					</fieldset>
 					<fieldset class="form-group">
 						<label>Staff Name</label> 

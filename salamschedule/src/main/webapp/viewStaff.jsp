@@ -65,7 +65,7 @@
 	
 	<div class="center">
 		<h2>Staff Information</h2>
-		Staff ID: <c:out value="${s.sid}"/> <br>
+		Staff ID: <c:out value="${s.staffid}"/> <br>
 		Password(later buang): <c:out value="${s.pass}"/> <br><br>
 		Name: <c:out value="${s.name}"/> <br>
 		Address: <c:out value="${s.address}"/> <br>

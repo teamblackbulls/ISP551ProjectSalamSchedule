@@ -16,12 +16,12 @@ public class StaffDAO {
 	static Statement st = null;
 	static ResultSet rs = null;
 	
-	private String sid, name, address, phone, email, role, pass;
+	private String staffid, name, address, phone, email, role, pass;
 	private int id;
 	
 	//add Staff
 		public void addStaff(Staff bean) {
-			sid = bean.getSid();
+			staffid = bean.getStaffid();
 			name = bean.getName();
 			address = bean.getAddress();
 			phone = bean.getPhone();
@@ -34,8 +34,8 @@ public class StaffDAO {
 				con = ConnectionManager.getConnection();
 				
 				//create statement
-				ps = con.prepareStatement("INSERT INTO staff(sid, name, address, phone, email, role, pass)VALUES(?,?,?,?,?,?,?)");
-				ps.setString(1,sid);
+				ps = con.prepareStatement("INSERT INTO staff(staffid, name, address, phone, email, role, pass)VALUES(?,?,?,?,?,?,?)");
+				ps.setString(1,staffid);
 				ps.setString(2,name);
 				ps.setString(3, address);
 				ps.setString(4,phone);
@@ -73,7 +73,7 @@ public class StaffDAO {
 				while(rs.next()) {		//process result
 					Staff s = new Staff();
 					s.setId(rs.getInt("id"));
-					s.setSid(rs.getString("sid"));
+					s.setStaffid(rs.getString("staffid"));
 					s.setName(rs.getString("name"));
 					s.setAddress(rs.getString("address"));
 					s.setPhone(rs.getString("phone"));
@@ -111,7 +111,7 @@ public class StaffDAO {
 				if(rs.next()) {
 					
 					s.setId(rs.getInt("id"));
-					s.setSid(rs.getString("sid"));
+					s.setStaffid(rs.getString("staffid"));
 					s.setName(rs.getString("name"));
 					s.setAddress(rs.getString("address"));
 					s.setPhone(rs.getString("phone"));
@@ -154,7 +154,7 @@ public class StaffDAO {
 		//update Staff
 		public void updateStaff(Staff bean) {
 			id = bean.getId();
-			sid = bean.getSid();
+			staffid = bean.getStaffid();
 			name = bean.getName();
 			address = bean.getAddress();
 			phone = bean.getPhone();
@@ -167,14 +167,15 @@ public class StaffDAO {
 				con = ConnectionManager.getConnection();
 				
 				//create statement
-				ps = con.prepareStatement("UPDATE staff SET sid=?, name=?, address=?, phone=?, email=?,role=?,pass=? WHERE id=?");
-				ps.setString(1,sid);
+				ps = con.prepareStatement("UPDATE staff SET staffid=?,name=?, address=?, phone=?, email=?,role=?,pass=? WHERE id=?");
+				ps.setString(1, staffid);
 				ps.setString(2,name);
 				ps.setString(3, address);
 				ps.setString(4,phone);
 				ps.setString(5,email);
 				ps.setString(6,role);
 				ps.setString(7,pass);
+				
 				ps.setInt(8, id);
 				
 				//execute query
@@ -190,23 +191,23 @@ public class StaffDAO {
 			}
 		}
 		
+		
 		//get StaffLogin
-		public Staff getStaffLogin(String sid, String pass) {
+		public Staff getStaffLogin(String staffid, String pass) {
 			Staff s = new Staff();
 			try {
 				//call getConnection method
 				con = ConnectionManager.getConnection();
 				
 				//create statement
-				ps= con.prepareStatement("SELECT * FROM staff WHERE sid=? and pass=?");
-				ps.setString(1, sid);
+				ps= con.prepareStatement("SELECT * FROM staff WHERE staffid=? and pass=?");
+				ps.setString(1, staffid);
 				ps.setString(2, pass);
 				
 				//execute query
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					
-					s.setSid(rs.getString("sid"));
+					s.setStaffid(rs.getString("staffid"));
 					s.setPass(rs.getString("pass"));
 					s.setName(rs.getString("name"));
 				}

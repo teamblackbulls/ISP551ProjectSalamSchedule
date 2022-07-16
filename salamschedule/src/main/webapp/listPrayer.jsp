@@ -106,7 +106,7 @@
 			var r = confirm("Are you sure you want to delete?");
 			if (r == true) {
 				location.href = 'DeletePrayerController?id=' + id;
-				alert("Customer Request successfully deleted");
+				alert("Prayer successfully deleted");
 			} else {
 				return false;
 			}

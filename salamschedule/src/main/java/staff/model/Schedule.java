@@ -4,6 +4,8 @@ public class Schedule {
 
 	private int scheduleID;
 	private String scheduleDate;
+	
+	
 	private int prayerID;
 	private String staffID;
 	

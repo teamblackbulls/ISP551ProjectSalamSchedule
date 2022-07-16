@@ -33,12 +33,15 @@ public class LoginStaffController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		StaffDAO sd = new StaffDAO();
-		String sid = request.getParameter("sid");
+		
+		String staffid = request.getParameter("staffid");
 		String pass = request.getParameter("pass");
-		Staff s = sd.getStaffLogin(sid,pass);
+		
+		Staff s = sd.getStaffLogin(staffid,pass);
+		
 		if(s!=null && s.getName() != null) {
-			request.setAttribute("message", s.getName());
 			request.getRequestDispatcher("staffHome.jsp").forward(request, response);
+			request.setAttribute("message", s.getName());
 		} else {
 			response.sendRedirect("errorStaffLogin.html");
 		}

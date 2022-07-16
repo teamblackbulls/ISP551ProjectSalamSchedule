@@ -37,7 +37,7 @@ public class AddStaffController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Staff s = new Staff();	
-		s.setSid(request.getParameter("sid"));
+		s.setStaffid(request.getParameter("staffid"));
 		s.setName(request.getParameter("name"));
 		s.setAddress(request.getParameter("address"));
 		s.setPhone(request.getParameter("phone"));
