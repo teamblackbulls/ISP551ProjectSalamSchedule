@@ -20,27 +20,27 @@ public class ScheduleDAO {
 	private int scheduleID;
 	private String scheduleDate;
 	private int prayerID;
-	private String staffID;
+	private String imamID,bilalID;
 	
 	//add Schedule
 			public void addSchedule(Schedule bean) {
 				scheduleID = bean.getScheduleID();
 				scheduleDate = bean.getScheduleDate();
 				prayerID = bean.getPrayerID();
-				staffID = bean.getStaffID();
-				
+				imamID = bean.getImamID();
+				bilalID=bean.getBilalID();
 				
 				try {
 					//call getConnection() method
 					con = ConnectionManager.getConnection();
 					
 					//create statement
-					ps = con.prepareStatement("INSERT INTO schedule(scheduleid, scheduledate, prayerid, staffid)VALUES(?,?,?,?)");
+					ps = con.prepareStatement("INSERT INTO schedule(scheduleid, scheduledate, prayerid, imamid, bilalid)VALUES(?,?,?,?,?)");
 					ps.setInt(1,scheduleID);
 					ps.setString(2,scheduleDate);
 					ps.setInt(3, prayerID);
-					ps.setString(4,staffID);
-				
+					ps.setString(4,imamID);
+					ps.setString(5,bilalID);
 
 					//execute query
 					ps.executeUpdate();
@@ -74,8 +74,8 @@ public class ScheduleDAO {
 						s.setScheduleID(rs.getInt("scheduleid"));
 						s.setScheduleDate(rs.getString("scheduledate"));
 						s.setPrayerID(rs.getInt("prayerid"));
-						s.setStaffID(rs.getString("staffid"));
-					
+						s.setImamID(rs.getString("imamid"));
+						s.setBilalID(rs.getString("bilalid"));
 						schedules.add(s);
 					}
 					
@@ -108,7 +108,8 @@ public class ScheduleDAO {
 						s.setScheduleID(rs.getInt("scheduleid"));
 						s.setScheduleDate(rs.getString("scheduledate"));
 						s.setPrayerID(rs.getInt("prayerid"));
-						s.setStaffID(rs.getString("staffid"));
+						s.setImamID(rs.getString("imamid"));
+						s.setBilalID(rs.getString("bilalid"));
 					}
 					
 					//close connection
@@ -147,18 +148,20 @@ public class ScheduleDAO {
 				scheduleID = bean.getScheduleID();
 				scheduleDate = bean.getScheduleDate();
 				prayerID = bean.getPrayerID();
-				staffID = bean.getStaffID();
+				imamID = bean.getImamID();
+				bilalID=bean.getBilalID();
 				
 				try {
 					//call getConnection method
 					con = ConnectionManager.getConnection();
 					
 					//create statement
-					ps = con.prepareStatement("UPDATE Schedule SET scheduleid=?, scheduledate=?, prayerid=?, staffid=?,  WHERE scheduleid=?");
+					ps = con.prepareStatement("UPDATE Schedule SET scheduleid=?, scheduledate=?, prayerid=?, imamid=?, bilalid=?  WHERE scheduleid=?");
 					ps.setInt(1,scheduleID);
 					ps.setString(2,scheduleDate);
 					ps.setInt(3, prayerID);
-					ps.setString(4,staffID);
+					ps.setString(4,imamID);
+					ps.setString(5,bilalID);
 					
 					//execute query
 					ps.executeUpdate();

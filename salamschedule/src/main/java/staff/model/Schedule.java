@@ -4,10 +4,9 @@ public class Schedule {
 
 	private int scheduleID;
 	private String scheduleDate;
-	
-	
 	private int prayerID;
-	private String staffID;
+	private String imamID;
+	private String bilalID;
 	
 	public Schedule() {
 		
@@ -37,11 +36,19 @@ public class Schedule {
 		this.prayerID = prayerID;
 	}
 
-	public String getStaffID() {
-		return staffID;
+	public String getImamID() {
+		return imamID;
 	}
 
-	public void setStaffID(String staffID) {
-		this.staffID = staffID;
+	public void setImamID(String imamID) {
+		this.imamID = imamID;
+	}
+
+	public String getBilalID() {
+		return bilalID;
+	}
+
+	public void setBilalID(String bilalID) {
+		this.bilalID = bilalID;
 	}
 }

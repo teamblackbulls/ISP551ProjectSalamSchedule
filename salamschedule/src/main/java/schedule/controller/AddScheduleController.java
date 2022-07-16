@@ -35,9 +35,10 @@ public class AddScheduleController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Schedule s = new Schedule();		
-		s.setScheduleDate(request.getParameter("Scheduledate"));
+		s.setScheduleDate(request.getParameter("scheduledate"));
 		s.setPrayerID(Integer.parseInt(request.getParameter("prayerid")));
-		s.setStaffID(request.getParameter("staffid"));
+		s.setImamID(request.getParameter("imamid"));
+		s.setBilalID(request.getParameter("bilalid"));
 		
 		dao.addSchedule(s); //invoke method addSchedule() in ScheduleDAO
 		
