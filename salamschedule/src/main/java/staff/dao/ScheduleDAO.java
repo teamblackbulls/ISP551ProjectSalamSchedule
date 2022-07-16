@@ -55,7 +55,7 @@ public class ScheduleDAO {
 			}
 			
 			//get all Schedules
-			public static List<Schedule> getAllScheduless() {
+			public static List<Schedule> getAllSchedules() {
 				List<Schedule> schedules = new ArrayList<Schedule>();
 				
 				try {
