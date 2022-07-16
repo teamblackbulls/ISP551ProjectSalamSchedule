@@ -1,24 +1,20 @@
 package staff.model;
 
 public class Prayer {
-	private int id;
+	private int prayerid;
 	private String prayername;
 	
 	public Prayer() {
 		
 	}
 
-
-	public int getId() {
-		return id;
+	public int getPrayerid() {
+		return prayerid;
 	}
 
-
-
-	public void setId(int id) {
-		this.id = id;
+	public void setPrayerid(int prayerid) {
+		this.prayerid = prayerid;
 	}
-
 
 
 	public String getPrayername() {
