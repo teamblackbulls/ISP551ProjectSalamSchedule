@@ -42,7 +42,7 @@ public class AddScheduleController extends HttpServlet {
 		
 		dao.addSchedule(s); //invoke method addSchedule() in ScheduleDAO
 		
-		request.setAttribute("Schedules",ScheduleDAO.getAllSchedules());
+		request.setAttribute("schedules",ScheduleDAO.getAllSchedules());
 		RequestDispatcher view = request.getRequestDispatcher("listSchedule.jsp");
 		view.forward(request, response);
 	}
